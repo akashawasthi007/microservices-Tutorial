@@ -2,6 +2,7 @@ package com.userService.userService.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.userService.userService.entities.User;
@@ -12,6 +13,7 @@ import com.userService.userService.services.UserService;
 @Service
 public class userServiceImpl implements UserService {
 
+    @Autowired
     private UserRepository userRepository;
 
     @Override
@@ -28,10 +30,11 @@ public class userServiceImpl implements UserService {
         //throw new UnsupportedOperationException("Unimplemented method 'getAllUser'");
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public User getUser(String userId) {
         // TODO Auto-generated method stub
-        return userRepository.getById(userId).orElseThrow( new ResourceNotFoundException("User ith given ID is not found on server"));
+        return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("Resource not found Exception caught"));
         //throw new UnsupportedOperationException("Unimplemented method 'getUser'");
     }
 
