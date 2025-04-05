@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.userService.userService.entities.User;
 import com.userService.userService.services.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -33,7 +34,7 @@ public class userController {
     }
 
     @GetMapping("/find/{userId}")
-    public ResponseEntity<User> getUser(@RequestParam String userId) {
+    public ResponseEntity<User> getUser(@PathVariable Long userId) {
         User user1 = userService.getUser(userId);
         return ResponseEntity.ok(user1);
     }

@@ -32,7 +32,7 @@ public class userServiceImpl implements UserService {
 
     @SuppressWarnings("deprecation")
     @Override
-    public User getUser(String userId) {
+    public User getUser(Long userId) {
         // TODO Auto-generated method stub
         return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("Resource not found Exception caught"));
         //throw new UnsupportedOperationException("Unimplemented method 'getUser'");
