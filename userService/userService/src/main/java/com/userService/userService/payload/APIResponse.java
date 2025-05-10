@@ -22,5 +22,4 @@ public class APIResponse {
     private boolean success;
 
     private HttpStatus status;
-
 }
