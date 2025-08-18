@@ -13,13 +13,14 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Builder
+@ToString
 public class APIResponse {
 
-    private String message;
+    public String message;
 
-    private boolean success;
+    public boolean success;
 
-    private HttpStatus status;
+    public HttpStatus status;  
+    
 }

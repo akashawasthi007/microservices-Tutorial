@@ -23,14 +23,6 @@ public class userController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestBody User user){
-        // String userId = UUID.randomUUID().toString();
-        // user.setUserId(userId);
-        User user1 = userService.saveUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(user1);
-    }
-
     @GetMapping("/find/{userId}")
     public ResponseEntity<User> getUser(@PathVariable Long userId) {
         User user1 = userService.getUser(userId);
@@ -41,6 +33,12 @@ public class userController {
     public ResponseEntity<List<User>> getAllUser() {
         List<User> allUsers = userService.getAllUser();
         return ResponseEntity.ok(allUsers);
+    }
+    
+    @GetMapping("/delete/{userId}")
+    public ResponseEntity<User> deleteUser(@PathVariable Long userId) {
+        User user1 = userService.deleteUser(userId);
+        return ResponseEntity.ok(user1);
     }
     
     
