@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "UserServiceApplication",
+            "request": "launch",
+            "mainClass": "com.userService.userService.UserServiceApplication",
+            "projectName": "userService"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HotelServiceApplication<hotelService>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.hotelService.hotelService.HotelServiceApplication",
+            "projectName": "hotelService",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
